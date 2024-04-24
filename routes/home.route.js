@@ -23,8 +23,7 @@ router.post('/img', async (req, res) => {
                     .grayscale()
                     .getBufferAsync(Jimp.MIME_JPEG);
 
-    const directory = `${__dirname}/../public/img/${nanoid().jpeg}`
-    console.log(directory)
+    const directory = `${__dirname}/../public/img/${nanoid()}.jpeg`
     await image.writeAsync(directory);
 
     res.set("Content-Type", "image/jpeg")
